@@ -1,17 +1,20 @@
-import { useState, useEffect } from "react";
+// import reactLogo from "./assets/react.svg";
+// import viteLogo from "/vite.svg";
 
 import "./App.css";
-import { Main } from "../Main/Main";
-import { Header } from "../Header/Header";
-import { Footer } from "../Footer/Footer";
+import Main from "../Main/Main";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Main />
-      <Footer />
-    </>
+    <div className="page">
+      <div className="page__content">
+        <Header />
+        <Main />
+        <Footer />
+      </div>
+    </div>
   );
 }
 
