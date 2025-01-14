@@ -1,9 +1,12 @@
-const Main = () => {
+import WeatherCard from "../WeatherCard/WeatherCard";
+
+function Main() {
   return (
-    <div>
-      <p>This is our Main</p>
-    </div>
+    <main>
+      <WeatherCard />
+      <section className="cards"></section>
+    </main>
   );
-};
+}
 
 export default Main;
