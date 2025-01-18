@@ -6,6 +6,7 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
+import "../../vendor/fonts.css";
 
 function App() {
   const [weatherData, setWeatherData] = useState({ type: "cold" });
