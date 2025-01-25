@@ -1,4 +1,7 @@
-export const defaultClothingItems = [
+const location = { latitude: 41.878113, longitude: -87.629799 };
+const apiKey = "533a4c658ee0e0df01942677b69395f2";
+
+const defaultClothingItems = [
   {
     _id: 0,
     name: "Cap",
@@ -36,3 +39,6 @@ export const defaultClothingItems = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
   },
 ];
+
+export { location, apiKey, defaultClothingItems };
+// deconstructing file and importing objects individually so that we can use them by themselves
