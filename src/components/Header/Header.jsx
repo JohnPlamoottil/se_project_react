@@ -1,6 +1,7 @@
 import "./Header.css";
 import logo from "../../assets/images/Logo.png";
 import avatar from "../../assets/images/Avatar.png";
+import { location } from "../../utils/constants";
 
 function Header({ handleAddClick }) {
   const currentDate = new Date().toLocaleString("default", {
@@ -11,7 +12,7 @@ function Header({ handleAddClick }) {
   return (
     <header className="header">
       <img className="header__logo" src={logo} />
-      <p className="header__date-and-location">{currentDate}, LOCATION</p>
+      <p className="header__date-and-location"> {currentDate}, LOCATION </p>;
       <button
         onClick={handleAddClick}
         type="button"

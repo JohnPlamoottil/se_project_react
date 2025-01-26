@@ -41,4 +41,3 @@ const defaultClothingItems = [
 ];
 
 export { location, apiKey, defaultClothingItems };
-// deconstructing file and importing objects individually so that we can use them by themselves
