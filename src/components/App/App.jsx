@@ -1,4 +1,4 @@
-import { act, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import "./App.css";
 import { coordinates, APIkey } from "../../utils/constants";
@@ -35,8 +35,10 @@ function App() {
   };
 
   useEffect(() => {
+    console.log("app is running");
     getWeather(coordinates, APIkey)
       .then((data) => {
+        console.log(data);
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
       })
