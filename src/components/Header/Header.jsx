@@ -14,7 +14,7 @@ function Header({ handleAddClick, weatherData }) {
       <p className="header__date-and-location">
         {currentDate}, {weatherData.city}
       </p>
-      ;
+
       <button
         onClick={handleAddClick}
         type="button"

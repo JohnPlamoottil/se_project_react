@@ -38,8 +38,8 @@ export const defaultClothingItems = [
 ];
 
 export const coordinates = {
-  latitude: 41.878113,
-  longitude: -87.629799,
+  latitude: 30,
+  longitude: 31,
 };
 
 export const APIkey = "533a4c658ee0e0df01942677b69395f2";
@@ -57,6 +57,8 @@ export const APIkey = "533a4c658ee0e0df01942677b69395f2";
 
 //Antartica
 // 82.8628° S, 135.0000° E
+// Latitude: -69° 38' 7.50" S
+// Longitude: 0° 00' 0.00" E
 
 // Cairo
 // 30.0444° N, 31.2357° E
