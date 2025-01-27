@@ -43,3 +43,23 @@ export const coordinates = {
 };
 
 export const APIkey = "533a4c658ee0e0df01942677b69395f2";
+
+// Chicago
+// latitude: 41.878113,
+// longitude: -87.629799,
+
+//Mexico City
+// latitude 19.432608,
+// longitude -99.133209
+
+//Chalakudy
+//10.3070° N, 76.3341° E
+
+//Antartica
+// 82.8628° S, 135.0000° E
+
+// Cairo
+// 30.0444° N, 31.2357° E
+
+// Rio do Janiero
+// 22.9068° S, -43.1729° W

@@ -13,6 +13,6 @@ function WeatherCard({ weatherData }) {
 
 export default WeatherCard;
 
-//how to research props to react component
-//send the data as prop"weatherData" to weatherCard.jsx
-//weatherData call it that and pass it
+//how to research props to react component Jan27
+//send the data as prop"weatherData" to weatherCard.jsx Jan27
+//weatherData call it that and pass it Jan27
