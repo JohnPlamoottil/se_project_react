@@ -38,8 +38,8 @@ export const defaultClothingItems = [
 ];
 
 export const coordinates = {
-  latitude: 30,
-  longitude: 31,
+  latitude: 10,
+  longitude: 76,
 };
 
 export const APIkey = "533a4c658ee0e0df01942677b69395f2";
@@ -65,3 +65,7 @@ export const APIkey = "533a4c658ee0e0df01942677b69395f2";
 
 // Rio do Janiero
 // 22.9068° S, -43.1729° W
+
+// Thachil House
+// longitude 10.34423
+// latitude 76.32174

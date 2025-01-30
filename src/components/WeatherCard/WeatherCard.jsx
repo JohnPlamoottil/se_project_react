@@ -1,6 +1,5 @@
 import "./WeatherCard.css";
 import sunny from "../../assets/images/day/sunny.png";
-// import { filterWeatherData } from "../../utils/weatherApi";
 
 function WeatherCard({ weatherData }) {
   return (
