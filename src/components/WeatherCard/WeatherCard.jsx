@@ -10,6 +10,7 @@ function WeatherCard({ weatherData }) {
       option.condition === weatherData.condition
     );
   });
+  console.log(filteredOptions[0]?.url, weatherData);
   // since weatherOption is a array with ONE element not an option, need the 0th element
   const weatherOptionUrl = filteredOptions[0]?.url;
   // quesiton mark is for optional chaining at 14min10sec of video 14
