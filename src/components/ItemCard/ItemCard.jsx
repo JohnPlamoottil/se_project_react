@@ -1,13 +1,13 @@
 import "./ItemCard.css";
 
 function ItemCard({ item, onCardClick }) {
-  //   console.log(props.item);
+  console.log(item);
   const handleCardClick = () => {
     onCardClick(item);
   };
 
   return (
-    <li className="card" key={item.name}>
+    <li className="card">
       <h2 className="card__name">{item.name}</h2>
       <img
         onClick={handleCardClick}
