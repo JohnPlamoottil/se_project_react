@@ -3,6 +3,7 @@ import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
 
 function Main({ weatherData, cards, handleCardClick }) {
+  console.log(cards);
   return (
     <main>
       <WeatherCard weatherData={weatherData} />
@@ -14,12 +15,14 @@ function Main({ weatherData, cards, handleCardClick }) {
           {cards
             .filter((card) => card.weather === weatherData.type)
             .map((filteredCard) => {
-              <ItemCard
-                key={filteredCard._id}
-                card={filteredCard}
-                onCardClick={handleCardClick}
-              />;
-              //structured arguments
+              return (
+                <ItemCard
+                  key={filteredCard._id}
+                  card={filteredCard}
+                  onCardClick={handleCardClick}
+                />
+              );
+              //structured arguments - passed card in as a argument, and then all argument from app.jsx to itemCard
             })}
         </ul>
       </section>

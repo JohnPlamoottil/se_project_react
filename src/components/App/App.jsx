@@ -23,6 +23,7 @@ function App() {
   // const [weatherData, setWeatherData] = useState({ type: "hot" });
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
+  const [clothingItems, setClothingItems] = useState([]);
 
   const handleCardClick = (card) => {
     // debugger;
@@ -38,6 +39,8 @@ function App() {
     setActiveModal("");
   };
 
+  console.log("hello");
+
   useEffect(() => {
     console.log("app is running");
     getWeather(coordinates, APIkey)
@@ -47,6 +50,13 @@ function App() {
         setWeatherData(filteredData);
       })
       .catch(console.error);
+  }, []);
+
+  console.log("TEST2:", defaultClothingItems);
+
+  useEffect(() => {
+    setClothingItems(defaultClothingItems);
+    console.log("TEST:", clothingItems);
   }, []);
 
   // passing the properties as objects ^^^
