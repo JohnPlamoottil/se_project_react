@@ -73,6 +73,7 @@ function App() {
           handleCardClick={handleCardClick}
           cards={defaultClothingItems}
         />
+        <Footer />
       </div>
       <ModalWithForm
         title="New Garment"
