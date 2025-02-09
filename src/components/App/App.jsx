@@ -14,12 +14,15 @@ import ItemModal from "../ItemModal/ItemModal";
 import "../../vendor/fonts.css";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 
+const defaultWeatherData = {
+  type: "",
+  city: "",
+  temp: { F: 0, C: 0 },
+};
+
 function App() {
-  const [weatherData, setWeatherData] = useState({
-    type: "cold",
-    temp: { F: 999, C: 999 },
-    city: "",
-  });
+  const [weatherData, setWeatherData] = useState(defaultWeatherData);
+
   // const [weatherData, setWeatherData] = useState({ type: "hot" });
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
