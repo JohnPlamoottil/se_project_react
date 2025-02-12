@@ -26,12 +26,13 @@
   border-radius: 16px;
   overflow: hidden;
   width: 90%;
-  height: 498px;
+  /* height: 498px; */
   max-width: 498px;
 }
 
 .modal__content_type_image {
   padding: 0;
+  height: auto;
 }
 
 .modal__image-container {
