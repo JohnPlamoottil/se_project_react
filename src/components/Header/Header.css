@@ -40,3 +40,8 @@
   font-weight: 700;
   line-height: 1.2;
 }
+
+.header-container-content {
+  display: flex;
+  margin-left: auto;
+}
