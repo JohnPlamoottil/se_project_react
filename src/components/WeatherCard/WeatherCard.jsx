@@ -27,7 +27,7 @@ const WeatherCard = ({ weatherData }) => {
           ? weatherData.temp.F
           : weatherData.temp.C}
         {currentTemperatureUnit} ternanry operator */}
-        {weatherData.temp[currentTemperatureUnit]}&deg {currentTemperatureUnit}
+        {weatherData.temp[currentTemperatureUnit]}° {currentTemperatureUnit}
         {/* bracket notation ^^^ */}
       </div>
       <img
