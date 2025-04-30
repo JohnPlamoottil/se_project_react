@@ -14,6 +14,7 @@ import ItemModal from "../ItemModal/ItemModal";
 import "../../vendor/fonts.css";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
+import AddItemModal from "../AddItemModal/AddItemModal";
 
 const defaultWeatherData = {
   type: "",
@@ -86,6 +87,18 @@ const App = () => {
           />
           <Footer />
         </div>
+        <AddItemModal
+          onClose={closeActiveModal}
+          isOpen={activeModal === "add-garment"}
+        />
+
+        <ItemModal
+          card={selectedCard || {}}
+          onClose={closeActiveModal}
+          activeModal={activeModal}
+          isOpen={activeModal === "preview"}
+        />
+
         <ModalWithForm
           title="New Garment"
           buttonText="Add Garment"
