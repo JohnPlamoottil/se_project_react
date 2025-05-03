@@ -5,6 +5,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 export default function AddItemModal({ isOpen, onClose }) {
   const [name, setName] = useState("");
   const [imageURL, setImageUrl] = useState("");
+  const [weather, setWeather] = useState("");
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -18,12 +19,19 @@ export default function AddItemModal({ isOpen, onClose }) {
     setWeather(e.target.value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // empty the inputs
+  };
+
   return (
     <ModalWithForm
       title="New Garment"
       buttonText="Add Garment"
       onClose={onClose}
       isOpen={isOpen}
+      onSubmit={handleSubmit}
     >
       <label htmlFor="name" className="modal__label">
         Name{" "}

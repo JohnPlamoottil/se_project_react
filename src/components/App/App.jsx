@@ -15,6 +15,8 @@ import "../../vendor/fonts.css";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
+// import { defaultClothingItems } from "../../utils/constants";
+// import { v4 } from "uuid";
 
 const defaultWeatherData = {
   type: "",
@@ -49,6 +51,17 @@ const App = () => {
 
   const closeActiveModal = () => {
     setActiveModal("");
+  };
+
+  const closeAllModals = () => {
+    setActiveModal("");
+  };
+
+  const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
+    // udate the clothingItems array
+    setClothingItems([{ name, link: imageUrl, weather }, ...clothingItems]);
+    // close the modal
+    closeAllModals();
   };
 
   console.log("hello");
