@@ -16,6 +16,7 @@ import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 // import { defaultClothingItems } from "../../utils/constants";
 // import { v4 } from "0uuid";
 
