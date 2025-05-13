@@ -15,8 +15,9 @@ import "../../vendor/fonts.css";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
+import Profile from "../Profile/Profile";
 // import { defaultClothingItems } from "../../utils/constants";
-// import { v4 } from "uuid";
+// import { v4 } from "0uuid";
 
 const defaultWeatherData = {
   type: "",
@@ -58,7 +59,7 @@ const App = () => {
   };
 
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
-    // udate the clothingItems array
+    // update the clothingItems array
     setClothingItems([{ name, link: imageUrl, weather }, ...clothingItems]);
     // close the modal
     closeAllModals();
@@ -105,13 +106,17 @@ const App = () => {
                 />
               }
             />
-            <Route path="/profile" element={<p>PROFILE</p>} />
+            <Route
+              path="/profile"
+              element={<Profile cards={defaultClothingItems}></Profile>}
+            />
           </Routes>
 
           <Footer />
         </div>
         <AddItemModal
           onClose={closeActiveModal}
+          onAddItem={handleAddItemModalSubmit}
           isOpen={activeModal === "add-garment"}
         />
 

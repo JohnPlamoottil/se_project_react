@@ -1,0 +1,4 @@
+.main__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 323px);
+}
