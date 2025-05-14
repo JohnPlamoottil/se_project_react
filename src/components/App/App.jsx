@@ -109,7 +109,12 @@ const App = () => {
             />
             <Route
               path="/profile"
-              element={<Profile cards={defaultClothingItems}></Profile>}
+              element={
+                <Profile
+                  cards={defaultClothingItems}
+                  handleCardClick={handleCardClick}
+                ></Profile>
+              }
             />
           </Routes>
 
@@ -124,14 +129,12 @@ const App = () => {
         <ItemModal
           card={selectedCard || {}}
           onClose={closeActiveModal}
-          activeModal={activeModal}
           isOpen={activeModal === "preview"}
         />
 
         <ModalWithForm
           title="New Garment"
           buttonText="Add Garment"
-          activeModal={activeModal}
           onClose={closeActiveModal}
           isOpen={activeModal === "add-garment"}
         >
