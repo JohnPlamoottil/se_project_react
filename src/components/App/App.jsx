@@ -17,6 +17,7 @@ import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitCon
 import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
 import CurrentUserContext from "../contexts/CurrentUserContext";
+import { getItems } from "../../utils/api";
 // import { defaultClothingItems } from "../../utils/constants";
 // import { v4 } from "0uuid";
 
@@ -79,11 +80,21 @@ const App = () => {
       .catch(console.error);
   }, []);
 
-  console.log("TEST2:", defaultClothingItems);
+  // console.log("TEST2:", defaultClothingItems);
+
+  // useEffect(() => {
+  //   setClothingItems(defaultClothingItems);
+  // console.log("TEST:", clothingItems);
+  // }, []);
 
   useEffect(() => {
-    setClothingItems(defaultClothingItems);
-    console.log("TEST:", clothingItems);
+    getItems()
+      .then((data) => {
+        console.log(data);
+        //update clothingItems to be the data that we got back from the server
+        setClothingItems(data);
+      })
+      .catch(console.error);
   }, []);
 
   // passing the properties as objects ^^^
@@ -103,7 +114,7 @@ const App = () => {
                 <Main
                   weatherData={weatherData}
                   handleCardClick={handleCardClick}
-                  cards={defaultClothingItems}
+                  cards={clothingItems}
                 />
               }
             />
@@ -111,7 +122,7 @@ const App = () => {
               path="/profile"
               element={
                 <Profile
-                  cards={defaultClothingItems}
+                  cards={clothingItems}
                   handleCardClick={handleCardClick}
                 ></Profile>
               }

@@ -12,7 +12,7 @@ const ItemCard = ({ card, onCardClick }) => {
       <img
         onClick={handleCardClick}
         className="card__image"
-        src={card.link}
+        src={card.imageUrl}
         alt={card.name}
       />
     </li>

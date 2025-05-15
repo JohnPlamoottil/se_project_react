@@ -11,18 +11,18 @@ function Header({ handleAddClick, weatherData }) {
   });
 
   const username = "JJ Plamoottil";
-  const avatar = "";
+  // const avatar = "JJ Plamoottil";
 
   return (
     <header className="header">
-      <img className="header__logo" src={logo} alt="header logo" />
+      <Link to="/">
+        <img src={logo} alt="WTWR logo" className="header__logo" />
+      </Link>
+      {/* <img className="header__logo" src={logo} alt="header logo" /> */}
       <p className="header__date-and-location">
         {currentDate}, {weatherData.city}
       </p>
       <div className="header-container-content">
-        <Link to="/">
-          <img src={logoPath} alt="WTWR logo" className="header__logo" />
-        </Link>
         <ToggleSwitch />
         <button
           onClick={handleAddClick}
