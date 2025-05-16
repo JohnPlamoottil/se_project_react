@@ -144,6 +144,7 @@ const App = () => {
                 <Profile
                   cards={clothingItems}
                   handleCardClick={handleCardClick}
+                  addNew={handleAddClick}
                 ></Profile>
               }
             />

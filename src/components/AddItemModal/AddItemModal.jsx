@@ -28,6 +28,7 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
 
   // };
 
+  const isValid = name && imageUrl && weather;
   return (
     <ModalWithForm
       title="New Garment"
@@ -77,8 +78,8 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
               className="modal__radio-input"
               onChange={handleWeatherChange}
             />
+            Hot
           </label>
-          Hot
         </div>
 
         <div>
@@ -115,6 +116,12 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
           </label>
         </div>
       </fieldset>
+      <button
+        type="submit"
+        className={`modal__submit ${isValid ? "" : "modal__submit_disabled"}`}
+      >
+        Add Garment{" "}
+      </button>
     </ModalWithForm>
   );
 }
