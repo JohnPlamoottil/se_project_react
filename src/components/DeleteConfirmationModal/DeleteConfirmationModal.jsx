@@ -1,6 +1,6 @@
 import React from "react";
 import "./DeleteConfirmationModal.css";
-import useModalClose from "../hooks/useModalClose";
+import useModalClose from "../../hooks/useModalClose";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "../ModalWithForm/ModalWithForm.css";
 import closeIcon from "../../assets/close.png";
