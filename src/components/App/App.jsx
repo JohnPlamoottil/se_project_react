@@ -20,7 +20,6 @@ import Profile from "../Profile/Profile";
 // import CurrentUserContext from "../contexts/CurrentUserContext";
 import { getItems, addItems, removeItem } from "../../utils/api";
 // import { defaultClothingItems } from "../../utils/constants";
-// import { v4 } from "0uuid";
 
 const defaultWeatherData = {
   type: "",
@@ -75,7 +74,20 @@ const App = () => {
   //   // 3. get response from server .. .then block line65
   //   // 4. render the item you got from server   line66
 
-  console.log("hello");
+  const handleConfirmDelete = () => {
+    if (selectedCard._id) {
+      removeItem(selectedCard._id)
+        .then(() => {
+          setClothingItems((prevItems) =>
+            prevItems.filter((item) => item._id !== selectedCard._id)
+          );
+          // setIsConfirmationModalOpen(false);
+          closeActiveModal();
+          setItemToDelete(null);
+        })
+        .catch(console.error);
+    }
+  };
 
   useEffect(() => {
     console.log("app is running");
@@ -153,11 +165,36 @@ const App = () => {
             setActiveModal("delete");
           }}
         />
+        <ItemModal
+          activeModal={activeModal}
+          card={selectedCard}
+          onClose={closeActiveModal}
+        />
+        <DeleteConfirmationModal
+          onClose={(closeActiveModal) => {
+            setActiveModal("");
+          }}
+          onConfirm={handleConfirmDelete}
+          delete
+          isOpen={activeModal === "delete"}
+        />
+      </div>
+    </CurrentTemperatureUnitContext.Provider>
+  );
+};
 
-        {/* Render <AddItemModal /> and pass it props */}
-        {/* // May15 Serge said to render AddItem Modal and comment out ModalWithForm */}
+export default App;
 
-        {/* <ModalWithForm
+// Notes
+
+// import reactLogo from "./assets/react.svg";
+// import viteLogo from "/vite.svg";
+
+/* Render <AddItemModal /> and pass it props */
+
+/* // May15 Serge said to render AddItem Modal and comment out ModalWithForm */
+
+/* <ModalWithForm
           title="New Garment"
           buttonText="Add Garment"
           onClose={closeActiveModal}
@@ -223,23 +260,4 @@ const App = () => {
               Cold
             </label>
           </fieldset>
-        </ModalWithForm> */}
-        <ItemModal
-          activeModal={activeModal}
-          card={selectedCard}
-          onClose={closeActiveModal}
-        />
-        <DeleteConfirmationModal
-          // onClose=
-          // onConfirm={}
-          isOpen={activeModal === "delete"}
-        />
-      </div>
-    </CurrentTemperatureUnitContext.Provider>
-  );
-};
-
-export default App;
-
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
+        </ModalWithForm> */

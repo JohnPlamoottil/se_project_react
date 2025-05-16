@@ -1,8 +1,9 @@
 import React from "react";
 import "./DeleteConfirmationModal.css";
 import useModalClose from "../hooks/useModalClose";
-
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import "../ModalWithForm/ModalWithForm.css";
+import closeIcon from "../../assets/close.png";
 
 const DeleteConfirmationModal = ({
   activeModal,
@@ -12,25 +13,33 @@ const DeleteConfirmationModal = ({
 }) => {
   useModalClose(isOpen, onClose);
   return (
-    <ModalWithForm isOpen={isOpen}>
-      <div className="modal__body">
-        <p className="modal__text">
+    <div className={`modal ${isOpen ? "modal_opened" : ""}`}>
+      <div className="modal__content modal__content_type_confirmation">
+        <button onClick={onClose} type="button" className="modal__close">
+          <img src={closeIcon} alt="close icon" />
+        </button>
+
+        <p className="modal__text modal__confirmation_text">
           Are you sure you want to delete this item? This action is
           irreversible.
         </p>
-      </div>
+        <button
+          className="modal__confirm-button"
+          type="button"
+          onClick={onConfirm}
+        >
+          Yes, delete item
+        </button>
 
-      <button
-        className="modal__confirm-button"
-        type="button"
-        onClick={onConfirm}
-      >
-        Yes, delete item
-      </button>
-      <button className="modal__cancel-button" type="button" onClick={onClose}>
-        Cancel
-      </button>
-    </ModalWithForm>
+        <button
+          className="modal__cancel-button"
+          type="button"
+          onClick={onClose}
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
   );
 };
 

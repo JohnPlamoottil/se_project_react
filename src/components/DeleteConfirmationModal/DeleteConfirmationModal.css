@@ -3,9 +3,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 60px 132px 60px 132px;
+  /* padding: 60px 132px 60px 132px; */
   font-family: "Cabinet Grotesk", Arial, sans-serif;
   max-width: 670px;
+  max-height: 280px;
 }
 
 .modal__confirm-button {
@@ -27,4 +28,10 @@
   border: none;
   padding: 0;
   cursor: pointer;
+}
+
+.modal__confirmation_text {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
 }
