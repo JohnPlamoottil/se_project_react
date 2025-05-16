@@ -17,7 +17,8 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 1.2;
-  margin: 20px 0 12px 32px;
+  margin-bottom: 12px;
+  margin-top: 0px;
 }
 
 .modal__content {
@@ -55,7 +56,7 @@
 }
 
 .modal__weather {
-  margin: 0 0 32px 32px;
+  margin: 0px;
 }
 
 .modal__delete-btn {
@@ -70,4 +71,11 @@
   font-weight: 700;
   line-height: 20px;
   margin-top: 0;
+}
+
+.modal__footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 32px 32px 32px;
+  align-items: flex-start;
 }

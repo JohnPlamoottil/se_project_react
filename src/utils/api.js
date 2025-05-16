@@ -15,7 +15,7 @@ function getItems() {
 }
 
 // addItem - analyze how you use getItems, and by analogy use postItems
-function addItems(data) {
+function addItems({ name, imageUrl, weather }) {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     body: JSON.stringify({ name, imageUrl, weather }),

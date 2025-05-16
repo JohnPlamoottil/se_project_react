@@ -5,7 +5,7 @@ function ClothesSection({ cards, handleCardClick }) {
     <div className="clothes-section">
       <div className="clothes-section__subheading">
         <p>Your Items</p>
-        <button> + Add New</button>
+        <button className=""> + Add New</button>
       </div>
       <ul className="main__items">
         {cards.map((filteredCard) => {

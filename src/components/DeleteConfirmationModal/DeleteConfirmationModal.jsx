@@ -20,8 +20,8 @@ const DeleteConfirmationModal = ({
         </button>
 
         <p className="modal__text modal__confirmation_text">
-          Are you sure you want to delete this item? This action is
-          irreversible.
+          Are you sure you want to delete this item? <br />
+          This action is irreversible.
         </p>
         <button
           className="modal__confirm-button"
