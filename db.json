@@ -13,10 +13,22 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Boot.png?etag=0953a2ea59f1c6ebc832fabacdc9c70e"
     },
     {
+      "_id": 2,
+      "name": "Cap",
+      "weather": "hot",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591"
+    },
+    {
       "_id": 3,
       "name": "Coat",
       "weather": "cold",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4"
+    },
+    {
+      "_id": 4,
+      "name": "Dress",
+      "weather": "hot",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Dress.png?etag=1f9cd32a311ab139cab43494883720bf"
     },
     {
       "_id": 5,
@@ -91,33 +103,10 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09"
     },
     {
-      "_id": 17
-    },
-    {
-      "_id": 18
-    },
-    {
-      "_id": 19
-    },
-    {
-      "_id": 20
-    },
-    {
-      "name": "test",
-      "weather": "warm",
-      "_id": 21
-    },
-    {
       "name": "New Sneakers",
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6ub0pgXnjiEfXzH4seCasYRX8VtHsDFBLDQ&s",
       "weather": "warm",
       "_id": 23
-    },
-    {
-      "name": "Sneakers",
-      "imageUrl": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAPDw8PDxAPEA8PDw8QDxAQDw8QEA8PFRUWFhURFRUYHSggGBolGxUVIjEhMSktLi4uGB8zODMtNygtLisBCgoKDg0OGhAQGDUfHyUtLSstLS03LS0tLS0rLSstLS0tNS0rLSsrLS0tLSstLS0tNS0rKy0rLSstLS0tLS0tLf/AABEIALcBEwMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAAAQIDBAUGBwj/xAA/EAACAQIEAwYDBgMHBAMAAAABAgADEQQSITEFQVEGEyJhcYEyUpEHFEJiocEjsfAzQ2NygtHhJLLC8RVTov/EABgBAQEBAQEAAAAAAAAAAAAAAAABAgME/8QAIBEBAQADAAEEAwAAAAAAAAAAAAECESEDEhMxMhQiUf/aAAwDAQACEQMRAD8A8liTaLQEWkxARaTECLSYiAiJMCIkxAiJMQIiTEBIkxARFpMCLRJiBESYgRaLSYgIkyICIiAiJMCIkxAiTEQLcRECYiICIkwIkxEBESYERJiBESYgRJiICIiBMREBERAREQEREBESYEREQEREBERAREQKIiICIiBMSJMBERASYiBcoUWqMqIpZ3YKirqWYmwAnYp2Ko0hbF4sir+Knh6YcUzzBqMRmI8h7yj7M8DmxaV2/A2WmT85Hxe2n1MxO0mLqLWKDN4bX0P0nHzZ5Y6mLv4cMct3Jfr9ic4vg8XSq/4dYfd39A1ypPqVnPcS4PicMf8AqKFWkPmZDkPo48J9jFHtC9Ntb77g+c6Dh/bdlGXvCFO6t8LDoVOhmZ5c59o1fDjfrXJSZ11fifDamtXCUL73o56B+lIqP0mRwbhvDMXUChHpJcZnfEMEF9gL7k+s3j5ca55eHKNV2S7IYjiTnu7U6K/HXdSVDfKo0zN5X058rx2i7H4vA1GV6ZqUwC4rUgSjJzNtxbmOXprPdqOASlh6dLDWRKYGR",
-      "weather": "cold",
-      "_id": 24
     }
   ]
 }
