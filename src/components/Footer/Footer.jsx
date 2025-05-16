@@ -4,10 +4,12 @@ import "./Footer.css";
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer__content">
+      <span>Developed by JJ Plamoottil</span>
+      <span>{new Date().getFullYear()}</span>
+      {/* <div className="footer__content">
         <p className="footer__text">Developed by JJ Plamoottil</p>
         <p className="footer__text">2025</p>
-      </div>
+      </div> */}
     </footer>
   );
 }

@@ -4,14 +4,14 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 export default function AddItemModal({ isOpen, onClose, onAddItem }) {
   const [name, setName] = useState("");
-  const [imageURL, setImageUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
   const [weather, setWeather] = useState("");
 
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
 
-  const handleImageUrlChange = (e) => {
+  const handleimageUrlChange = (e) => {
     setImageUrl(e.target.value);
   };
 
@@ -21,8 +21,12 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddItem();
+    onAddItem({ name, imageUrl, weather });
   };
+  // const a = (event) => {
+  //   event.preventDefault();
+
+  // };
 
   return (
     <ModalWithForm
@@ -48,15 +52,15 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
         />
         <span className="modal__error" id="place-name-error" />
       </label>
-      <label htmlFor="imageURL" className="modal__label">
+      <label htmlFor="imageUrl" className="modal__label">
         Image
         <input
           type="text"
           className="modal__input"
-          id="imageURL"
+          id="imageUrl"
           placeholder="Image URL"
-          onChange={handleImageUrlChange}
-          value={imageURL}
+          onChange={handleimageUrlChange}
+          value={imageUrl}
           required
         />
         <span className="modal__error" id="place-link-error" />

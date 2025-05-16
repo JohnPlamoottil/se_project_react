@@ -11,13 +11,14 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
+import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
 import "../../vendor/fonts.css";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
-import CurrentUserContext from "../contexts/CurrentUserContext";
-import { getItems } from "../../utils/api";
+// import CurrentUserContext from "../contexts/CurrentUserContext";
+import { getItems, addItems, removeItem } from "../../utils/api";
 // import { defaultClothingItems } from "../../utils/constants";
 // import { v4 } from "0uuid";
 
@@ -56,16 +57,23 @@ const App = () => {
     setActiveModal("");
   };
 
-  const closeAllModals = () => {
-    setActiveModal("");
+  const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
+    return addItems({ name, imageUrl, weather })
+      .then((data) => {
+        setClothingItems([data, ...clothingItems]);
+        closeActiveModal();
+      })
+      .catch(console.error);
+    // // update the clothingItems array
+
+    // // close the modal
+    // closeAllModals();
   };
 
-  const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
-    // update the clothingItems array
-    setClothingItems([{ name, link: imageUrl, weather }, ...clothingItems]);
-    // close the modal
-    closeAllModals();
-  };
+  //   // 1. get values from the form line64
+  //   // 2. make API request to the server to create item  line65
+  //   // 3. get response from server .. .then block line65
+  //   // 4. render the item you got from server   line66
 
   console.log("hello");
 
@@ -141,9 +149,15 @@ const App = () => {
           card={selectedCard || {}}
           onClose={closeActiveModal}
           isOpen={activeModal === "preview"}
+          onDelete={() => {
+            setActiveModal("delete");
+          }}
         />
 
-        <ModalWithForm
+        {/* Render <AddItemModal /> and pass it props */}
+        {/* // May15 Serge said to render AddItem Modal and comment out ModalWithForm */}
+
+        {/* <ModalWithForm
           title="New Garment"
           buttonText="Add Garment"
           onClose={closeActiveModal}
@@ -158,12 +172,12 @@ const App = () => {
               placeholder="Name"
             />
           </label>
-          <label htmlFor="imageURL" className="modal__label">
+          <label htmlFor="imageUrl" className="modal__label">
             Image{" "}
             <input
               type="text"
               className="modal__input"
-              id="imageURL"
+              id="imageUrl"
               placeholder="Image URL"
             />
           </label>
@@ -209,11 +223,16 @@ const App = () => {
               Cold
             </label>
           </fieldset>
-        </ModalWithForm>
+        </ModalWithForm> */}
         <ItemModal
           activeModal={activeModal}
           card={selectedCard}
           onClose={closeActiveModal}
+        />
+        <DeleteConfirmationModal
+          // onClose=
+          // onConfirm={}
+          isOpen={activeModal === "delete"}
         />
       </div>
     </CurrentTemperatureUnitContext.Provider>

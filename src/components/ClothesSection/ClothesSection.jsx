@@ -3,9 +3,9 @@ import "./ClothesSection.css";
 function ClothesSection({ cards, handleCardClick }) {
   return (
     <div className="clothes-section">
-      <div>
-        <p>Clothes Section</p>
-        <button> Add New</button>
+      <div className="clothes-section__subheading">
+        <p>Your Items</p>
+        <button> + Add New</button>
       </div>
       <ul className="main__items">
         {cards.map((filteredCard) => {

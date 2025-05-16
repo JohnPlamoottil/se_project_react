@@ -57,3 +57,17 @@
 .modal__weather {
   margin: 0 0 32px 32px;
 }
+
+.modal__delete-btn {
+  background: none;
+  border: none;
+  color: #ff4d00;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  margin-top: 0;
+}

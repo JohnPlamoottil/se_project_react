@@ -2,6 +2,9 @@
 # Sprint 10
 # Sprint 11
 
+How to Send GET and POST Requests with JavaScript Fetch API May15 2025
+<https://metabox.io/send-get-post-request-with-javascript-fetch-api/#:~:text=To%20send%20a%20JavaScript%20POST,path%2F'%2C%20options%20)%20.>
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

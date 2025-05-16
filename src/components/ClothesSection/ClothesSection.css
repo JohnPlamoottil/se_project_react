@@ -2,3 +2,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, 323px);
 }
+.clothes-section {
+  flex-grow: 2;
+}
+.clothes-section__subheading {
+  display: flex;
+}

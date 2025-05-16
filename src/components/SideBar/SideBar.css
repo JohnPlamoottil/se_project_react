@@ -2,3 +2,10 @@
   width: 56x;
   height: 56px;
 }
+
+.sidebar {
+  display: flex;
+  gap: 50px;
+  font-size: 20px;
+  color: black;
+}
