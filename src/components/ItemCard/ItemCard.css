@@ -18,6 +18,7 @@
   background-color: white;
   padding: 5px;
   border: 2px solid white;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .card__image {

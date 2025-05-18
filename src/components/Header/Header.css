@@ -16,6 +16,7 @@
   font-weight: 700;
   line-height: 1.2;
   display: contents;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .header__add-clothes-btn {
@@ -26,6 +27,7 @@
   line-height: 1.2;
   cursor: pointer;
   background-color: transparent;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .header__user-container {

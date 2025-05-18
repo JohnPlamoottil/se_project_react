@@ -63,6 +63,8 @@
   max-width: 440px;
   height: 24px;
   padding-top: 8px;
+  background-color: white;
+  color: black;
 }
 
 .modal__radio-buttons {

@@ -112,7 +112,7 @@ const App = () => {
       .then((data) => {
         console.log(data);
         //update clothingItems to be the data that we got back from the server
-        setClothingItems(data);
+        setClothingItems(data.reverse());
       })
       .catch(console.error);
   }, []);
