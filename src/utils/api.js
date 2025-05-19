@@ -9,9 +9,7 @@ function checkResponse(res) {
 }
 
 function getItems() {
-  return fetch(`${baseUrl}/items`).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-  });
+  return fetch(`${baseUrl}/items`).then(checkResponse);
 }
 
 // addItem - analyze how you use getItems, and by analogy use postItems
@@ -22,9 +20,7 @@ function addItems({ name, imageUrl, weather }) {
     headers: {
       "Content-Type": "application/json",
     },
-  }).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-  });
+  }).then(checkResponse);
 }
 
 // removeItem
@@ -36,4 +32,4 @@ const removeItem = (id) => {
     },
   }).then(checkResponse);
 };
-export { getItems, addItems, removeItem };
+export { getItems, addItems, removeItem, checkResponse };

@@ -20,6 +20,7 @@
   font-size: 16px;
   line-height: 1.2;
   font-weight: 700;
+  color: rgba(0, 0, 0, 1);
 }
 
 .modal__close {
@@ -64,7 +65,7 @@
   height: 24px;
   padding-top: 8px;
   background-color: white;
-  color: black;
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .modal__radio-buttons {

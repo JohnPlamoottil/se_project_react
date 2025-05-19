@@ -8,6 +8,7 @@
 .clothes-section__subheading {
   display: flex;
   gap: 20px;
+  color: rgba(0, 0, 0, 1);
 }
 
 .clothes-section__add-new {

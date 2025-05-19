@@ -22,7 +22,8 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setValues({ name, imageUrl, weather });
+    // setValues(values);
+    onAddItem(values);
   };
   // const a = (event) => {
   //   event.preventDefault();
@@ -78,7 +79,7 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
               id="hot"
               type="radio"
               value="hot"
-              name="radio"
+              name="weather"
               className="modal__radio-input"
               onChange={handleChange}
             />
@@ -95,7 +96,7 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
               id="warm"
               type="radio"
               value="warm"
-              name="radio"
+              name="weather"
               className="modal__radio-input"
               onChange={handleChange}
             />
@@ -112,7 +113,7 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
               id="cold"
               type="radio"
               value="cold"
-              name="radio"
+              name="weather"
               className="modal__radio-input"
               onChange={handleChange}
             />

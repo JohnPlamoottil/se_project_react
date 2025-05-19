@@ -1,15 +1,16 @@
 import "./ItemModal.css";
 import closeIcon from "../../assets/close.png";
+import useModalClose from "../../hooks/useModalClose";
 
 function ItemModal({ onClose, card, isOpen, onDelete }) {
   if (!card) {
     return null;
   }
-
   // declare a handler
   // pass the onDelete function the card inside this handler
 
   // use handler with onClick
+  useModalClose(isOpen, onClose);
   return (
     <div className={`modal ${isOpen && "modal_opened"}`}>
       <div className="modal__content modal__content_type_image">
