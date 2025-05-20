@@ -6,7 +6,11 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
   // const [name, setName] = useState("");
   // const [imageUrl, setImageUrl] = useState("");
   // const [weather, setWeather] = useState("");
-  const { values, handleChange, setValues } = useForm({});
+  const { values, handleChange, setValues } = useForm({
+    name: "",
+    imageUrl: "",
+    weather: "",
+  });
 
   // const handleNameChange = (e) => {
   //   setName(e.target.value);

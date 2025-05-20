@@ -65,7 +65,7 @@
   height: 24px;
   padding-top: 8px;
   background-color: white;
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 1);
 }
 
 .modal__radio-buttons {
@@ -77,6 +77,7 @@
 
 .modal__label {
   padding-top: 24px;
+  color: black;
 }
 
 .modal__label_type_radio {
@@ -85,8 +86,13 @@
   border: none;
 }
 
+.modal__label_type_radio:has(:checked) {
+  color: black;
+}
+
 .modal__legend {
   padding: 24px 0 12px;
+  color: black;
 }
 
 .modal__submit {

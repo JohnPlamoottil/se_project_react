@@ -19,6 +19,7 @@
   line-height: 1.2;
   margin-bottom: 12px;
   margin-top: 0px;
+  color: #000;
 }
 
 .modal__content {
@@ -57,6 +58,7 @@
 
 .modal__weather {
   margin: 0px;
+  color: #000;
 }
 
 .modal__delete-btn {
