@@ -119,6 +119,12 @@
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6ub0pgXnjiEfXzH4seCasYRX8VtHsDFBLDQ&s",
       "weather": "hot",
       "_id": 19
+    },
+    {
+      "name": "rain outfit",
+      "imageUrl": "https://p.globalsources.com/IMAGES/PDT/B5124183311/Rainwear.jpg",
+      "weather": "cold",
+      "_id": 20
     }
   ]
 }
