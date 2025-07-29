@@ -12,6 +12,7 @@ import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 // import CurrentUserContext from "../contexts/CurrentUserContext";
 import { getItems, addItems, removeItem } from "../../utils/api";
 // import { defaultClothingItems } from "../../utils/constants";
@@ -137,11 +138,13 @@ const App = () => {
             <Route
               path="/profile"
               element={
-                <Profile
-                  cards={clothingItems}
-                  handleCardClick={handleCardClick}
-                  addNew={handleAddClick}
-                ></Profile>
+                <ProtectedRoute isAuthenticated={false}>
+                  <Profile
+                    cards={clothingItems}
+                    handleCardClick={handleCardClick}
+                    addNew={handleAddClick}
+                  ></Profile>
+                </ProtectedRoute>
               }
             />
           </Routes>
