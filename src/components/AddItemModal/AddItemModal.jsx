@@ -1,16 +1,24 @@
-// import { useState } from "react";
+import { useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import useForm from "../../hooks/useForm";
+
+const initialValues = {
+  name: "",
+  imageUrl: "",
+  weather: "",
+};
 
 export default function AddItemModal({ isOpen, onClose, onAddItem }) {
   // const [name, setName] = useState("");
   // const [imageUrl, setImageUrl] = useState("");
   // const [weather, setWeather] = useState("");
-  const { values, handleChange, setValues } = useForm({
-    name: "",
-    imageUrl: "",
-    weather: "",
-  });
+  const { values, handleChange, setValues } = useForm(initialValues);
+
+  useEffect(() => {
+    if (isOpen) {
+      setValues(initialValues);
+    }
+  }, [isOpen, setValues]);
 
   // const handleNameChange = (e) => {
   //   setName(e.target.value);
@@ -36,7 +44,7 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
 
   console.log(values);
 
-  const isValid = name && imageUrl && weather;
+  const isValid = values.name && values.imageUrl && values.weather;
   return (
     <ModalWithForm
       title="New Garment"
@@ -44,6 +52,7 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
       onClose={onClose}
       isOpen={isOpen}
       onSubmit={handleSubmit}
+      isValid={isValid}
     >
       <label htmlFor="clothing-name" className="modal__label">
         Name{" "}
@@ -125,12 +134,6 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
           </label>
         </div>
       </fieldset>
-      <button
-        type="submit"
-        className={`modal__submit ${isValid ? "" : "modal__submit_disabled"}`}
-      >
-        Add Garment{" "}
-      </button>
     </ModalWithForm>
   );
 }
