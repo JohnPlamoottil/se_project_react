@@ -15,6 +15,7 @@ import Profile from "../Profile/Profile";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 // import CurrentUserContext from "../contexts/CurrentUserContext";
 import { getItems, addItems, removeItem } from "../../utils/api";
+import { signin, signup } from "../../utils/auth";
 // import { defaultClothingItems } from "../../utils/constants";
 
 const defaultWeatherData = {
@@ -50,6 +51,18 @@ const App = () => {
 
   const closeActiveModal = () => {
     setActiveModal("");
+  };
+
+  const handleRegisterModalSubmit = (registerFormValues) => {
+    const { email, password } = registerFormValues;
+    signup(registerFormValues)
+      .then(() => {
+        signin(email, password);
+      })
+      .then((res) => {
+        localStorage.setItem("jwt", res.token);
+      })
+      .catch(console.error);
   };
 
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
