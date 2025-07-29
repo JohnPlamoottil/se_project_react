@@ -1,15 +1,10 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import {
-  coordinates,
-  APIkey,
-  defaultClothingItems,
-} from "../../utils/constants";
+import { coordinates, APIkey } from "../../utils/constants";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
 import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
 import "../../vendor/fonts.css";
@@ -83,6 +78,7 @@ const App = () => {
           );
           // setIsConfirmationModalOpen(false);
           closeActiveModal();
+          // eslint-disable-next-line no-undef
           setItemToDelete(null);
         })
         .catch(console.error);
@@ -109,7 +105,7 @@ const App = () => {
 
   useEffect(() => {
     getItems()
-      .then((data) => {
+      .then(({ data }) => {
         console.log(data);
         //update clothingItems to be the data that we got back from the server
         setClothingItems(data.reverse());
@@ -172,7 +168,7 @@ const App = () => {
           onClose={closeActiveModal}
         />
         <DeleteConfirmationModal
-          onClose={(closeActiveModal) => {
+          onClose={() => {
             setActiveModal("");
           }}
           onConfirm={handleConfirmDelete}
