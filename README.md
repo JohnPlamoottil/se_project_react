@@ -1,4 +1,4 @@
-# React + Vite
+# React + Vite Sprints 10 & 11 Frontend
 # Sprint 10
 ## Project 10 - Introduction to React.js:
 
