@@ -11,6 +11,7 @@ import "../../vendor/fonts.css";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
+import RegisterModal from "../RegisterModal/RegisterModal";
 import Profile from "../Profile/Profile";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 // import CurrentUserContext from "../contexts/CurrentUserContext";
@@ -34,6 +35,8 @@ const App = () => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [clothingItems, setClothingItems] = useState([]);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userData, setUserData] = useState(null);
 
   const handleToggleSwitchChange = () => {
     setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
@@ -61,6 +64,8 @@ const App = () => {
       })
       .then((res) => {
         localStorage.setItem("jwt", res.token);
+        setIsAuthenticated(true);
+        setUserData(res.user);
       })
       .catch(console.error);
   };
@@ -135,7 +140,11 @@ const App = () => {
     >
       <div className="page">
         <div className="page__content">
-          <Header handleAddClick={handleAddClick} weatherData={weatherData} />
+          <Header
+            handleAddClick={handleAddClick}
+            weatherData={weatherData}
+            userData={userData}
+          />
 
           <Routes>
             <Route
@@ -151,7 +160,7 @@ const App = () => {
             <Route
               path="/profile"
               element={
-                <ProtectedRoute isAuthenticated={false}>
+                <ProtectedRoute isAuthenticated={isAuthenticated}>
                   <Profile
                     cards={clothingItems}
                     handleCardClick={handleCardClick}
@@ -168,6 +177,11 @@ const App = () => {
           onClose={closeActiveModal}
           onAddItem={handleAddItemModalSubmit}
           isOpen={activeModal === "add-garment"}
+        />
+        <RegisterModal
+          onClose={() => setActiveModal("")}
+          isOpen={activeModal == "register"}
+          onRegister={handleRegisterModalSubmit}
         />
 
         <ItemModal

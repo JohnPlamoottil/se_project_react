@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import "./RegisterModal.css";
 import useForm from "../../hooks/useForm";
 
 const initialValues = {
