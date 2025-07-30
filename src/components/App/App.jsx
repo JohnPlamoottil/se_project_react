@@ -17,7 +17,7 @@ import Profile from "../Profile/Profile";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 // import CurrentUserContext from "../contexts/CurrentUserContext";
 import { getItems, addItems, removeItem } from "../../utils/api";
-import { signin, signup } from "../../utils/auth";
+import { signin, signup, authorizeUser } from "../../utils/auth";
 // import { defaultClothingItems } from "../../utils/constants";
 
 const defaultWeatherData = {
@@ -141,6 +141,17 @@ const App = () => {
         setClothingItems(data.reverse());
       })
       .catch(console.error);
+  }, []);
+
+  useEffect(() => {
+    const token = localStorage.getItem("jwt");
+
+    if (token) {
+      authorizeUser(token).then((user) => {
+        setIsAuthenticated(true);
+        setUserData(user);
+      });
+    }
   }, []);
 
   // passing the properties as objects ^^^

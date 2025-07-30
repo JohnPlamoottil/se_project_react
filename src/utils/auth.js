@@ -28,4 +28,14 @@ function signin({ email, password }) {
   }).then(checkResponse);
 }
 
-export { signup, signin };
+function authorizeUser(token) {
+  return fetch(`${baseUrl}/users/me`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then(checkResponse);
+}
+
+export { signup, signin, authorizeUser };
