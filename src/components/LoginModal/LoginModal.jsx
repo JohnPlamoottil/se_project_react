@@ -7,7 +7,12 @@ const initialValues = {
   password: "",
 };
 
-export default function LoginModal({ isOpen, onClose, onLogin }) {
+export default function LoginModal({
+  isOpen,
+  onClose,
+  onLogin,
+  onRegisterClick,
+}) {
   const { values, handleChange, setValues } = useForm(initialValues);
 
   const handleSubmit = (e) => {
@@ -31,6 +36,7 @@ export default function LoginModal({ isOpen, onClose, onLogin }) {
       isOpen={isOpen}
       onSubmit={handleSubmit}
       isValid={isValid}
+      onAltButtonClick={onRegisterClick}
     >
       <label htmlFor="email" className="modal__label">
         Email
