@@ -13,22 +13,24 @@ function getItems() {
 }
 
 // addItem - analyze how you use getItems, and by analogy use postItems
-function addItems({ name, imageUrl, weather }) {
+function addItems(token, { name, imageUrl, weather }) {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     body: JSON.stringify({ name, imageUrl, weather }),
     headers: {
       "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
     },
   }).then(checkResponse);
 }
 
 // removeItem
-const removeItem = (id) => {
+const removeItem = (token, id) => {
   return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
     },
   }).then(checkResponse);
 };
