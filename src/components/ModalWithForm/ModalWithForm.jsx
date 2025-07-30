@@ -20,15 +20,19 @@ function ModalWithForm({
         </button>
         <form className="modal__form" onSubmit={onSubmit}>
           {children}
-          <button
-            type="submit"
-            className={`modal__submit ${
-              isValid ? "" : "modal__submit_disabled"
-            }`}
-          >
-            {buttonText}
-          </button>
-          {altButtonText && <button type="button">{altButtonText}</button>}
+          <div className="modal__buttons">
+            <button
+              type="submit"
+              className={`modal__submit ${
+                isValid ? "" : "modal__submit_disabled"
+              }`}
+            >
+              {buttonText}
+            </button>
+            {altButtonText && (
+              <button className="modal__alt">{altButtonText}</button>
+            )}
+          </div>
         </form>
       </div>
     </div>

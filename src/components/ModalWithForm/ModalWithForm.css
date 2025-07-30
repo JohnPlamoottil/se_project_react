@@ -113,3 +113,12 @@
 .modal__submit:hover {
   background-color: rgba(0, 0, 0, 0.6);
 }
+
+.modal__buttons {
+  display: flex;
+  margin-top: 10px;
+}
+
+.modal__alt {
+  border: none;
+}
