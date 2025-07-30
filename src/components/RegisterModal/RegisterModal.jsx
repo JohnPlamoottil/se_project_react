@@ -9,7 +9,12 @@ const initialValues = {
   avatarURL: "",
 };
 
-export default function RegisterModal({ isOpen, onClose, onRegister }) {
+export default function RegisterModal({
+  isOpen,
+  onClose,
+  onRegister,
+  onLoginClick,
+}) {
   const { values, handleChange, setValues } = useForm(initialValues);
 
   const handleSubmit = (e) => {
@@ -34,6 +39,7 @@ export default function RegisterModal({ isOpen, onClose, onRegister }) {
       isOpen={isOpen}
       onSubmit={handleSubmit}
       isValid={isValid}
+      onAltButtonClick={onLoginClick}
     >
       <label htmlFor="email" className="modal__label">
         Email*
@@ -87,8 +93,8 @@ export default function RegisterModal({ isOpen, onClose, onRegister }) {
           id="avatarURL"
           placeholder="Avatar URL"
           onChange={handleChange}
-          value={values.avatarURL}
           required
+          value={values.avatarURL}
           name="avatarURL"
         />
       </label>
