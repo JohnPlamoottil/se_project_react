@@ -70,12 +70,13 @@ const App = () => {
     const { email, password } = registerFormValues;
     signup(registerFormValues)
       .then(() => {
-        signin(email, password);
+        return signin({ email, password });
       })
       .then((res) => {
         localStorage.setItem("jwt", res.token);
         setIsAuthenticated(true);
         setCurrentUser(res.user);
+        closeActiveModal();
       })
       .catch(console.error);
   };
@@ -86,6 +87,7 @@ const App = () => {
         localStorage.setItem("jwt", res.token);
         setIsAuthenticated(true);
         setCurrentUser(res.user);
+        closeActiveModal();
       })
       .catch(console.error);
   };
@@ -215,11 +217,13 @@ const App = () => {
             onClose={closeActiveModal}
             isOpen={activeModal === "register"}
             onRegister={handleRegisterModalSubmit}
+            onLoginClick={handleLoginClick}
           />
           <LoginModal
             onClose={closeActiveModal}
             isOpen={activeModal === "login"}
             onLogin={handleLoginModalSubmit}
+            onRegisterClick={handleRegisterClick}
           />
 
           <ItemModal
