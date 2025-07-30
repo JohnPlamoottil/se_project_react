@@ -10,6 +10,7 @@ function ModalWithForm({
   onSubmit,
   isValid,
   altButtonText = null,
+  onAltButtonClick,
 }) {
   return (
     <div className={`modal ${isOpen ? "modal_opened" : ""}`}>
@@ -30,7 +31,9 @@ function ModalWithForm({
               {buttonText}
             </button>
             {altButtonText && (
-              <button className="modal__alt">{altButtonText}</button>
+              <button className="modal__alt" onClick={onAltButtonClick}>
+                {altButtonText}
+              </button>
             )}
           </div>
         </form>
