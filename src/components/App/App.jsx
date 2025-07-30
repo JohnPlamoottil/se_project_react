@@ -38,7 +38,7 @@ const App = () => {
   const [clothingItems, setClothingItems] = useState([]);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [userData, setUserData] = useState(null);
+  const [currentUser, setCurrentUser] = useState(null);
 
   const handleToggleSwitchChange = () => {
     setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
@@ -54,6 +54,14 @@ const App = () => {
     setActiveModal("add-garment");
   };
 
+  const handleLoginClick = () => {
+    setActiveModal("login");
+  };
+
+  const handleRegisterClick = () => {
+    setActiveModal("register");
+  };
+
   const closeActiveModal = () => {
     setActiveModal("");
   };
@@ -67,7 +75,7 @@ const App = () => {
       .then((res) => {
         localStorage.setItem("jwt", res.token);
         setIsAuthenticated(true);
-        setUserData(res.user);
+        setCurrentUser(res.user);
       })
       .catch(console.error);
   };
@@ -77,7 +85,7 @@ const App = () => {
       .then((res) => {
         localStorage.setItem("jwt", res.token);
         setIsAuthenticated(true);
-        setUserData(res.user);
+        setCurrentUser(res.user);
       })
       .catch(console.error);
   };
@@ -150,7 +158,7 @@ const App = () => {
     if (token) {
       authorizeUser(token).then((user) => {
         setIsAuthenticated(true);
-        setUserData(user);
+        setCurrentUser(user);
       });
     }
   }, []);
@@ -158,7 +166,7 @@ const App = () => {
   // passing the properties as objects ^^^
 
   return (
-    <CurrentUserContext.Provider value={userData}>
+    <CurrentUserContext.Provider value={currentUser}>
       <CurrentTemperatureUnitContext.Provider
         value={{ currentTemperatureUnit, handleToggleSwitchChange }}
       >
@@ -167,7 +175,8 @@ const App = () => {
             <Header
               handleAddClick={handleAddClick}
               weatherData={weatherData}
-              userData={userData}
+              onLoginClick={handleLoginClick}
+              onRegisterClick={handleRegisterClick}
             />
 
             <Routes>
