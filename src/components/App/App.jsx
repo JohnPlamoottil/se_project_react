@@ -12,6 +12,7 @@ import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
+import LoginModal from "../LoginModal/LoginModal";
 import Profile from "../Profile/Profile";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 // import CurrentUserContext from "../contexts/CurrentUserContext";
@@ -62,6 +63,16 @@ const App = () => {
       .then(() => {
         signin(email, password);
       })
+      .then((res) => {
+        localStorage.setItem("jwt", res.token);
+        setIsAuthenticated(true);
+        setUserData(res.user);
+      })
+      .catch(console.error);
+  };
+
+  const handleLoginModalSubmit = (loginFormValues) => {
+    signin(loginFormValues)
       .then((res) => {
         localStorage.setItem("jwt", res.token);
         setIsAuthenticated(true);
@@ -179,9 +190,14 @@ const App = () => {
           isOpen={activeModal === "add-garment"}
         />
         <RegisterModal
-          onClose={() => setActiveModal("")}
-          isOpen={activeModal == "register"}
+          onClose={closeActiveModal}
+          isOpen={activeModal === "register"}
           onRegister={handleRegisterModalSubmit}
+        />
+        <LoginModal
+          onClose={closeActiveModal}
+          isOpen={activeModal === "login"}
+          onLogin={handleLoginModalSubmit}
         />
 
         <ItemModal
