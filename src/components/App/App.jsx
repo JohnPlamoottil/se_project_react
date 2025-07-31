@@ -14,10 +14,11 @@ import CurrentUserContext from "../../contexts/CurrentUserContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
+import EditProfileModal from "../EditProfileModal/EditProfileModal";
 import Profile from "../Profile/Profile";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import { getItems, addItems, removeItem } from "../../utils/api";
-import { signin, signup, authorizeUser } from "../../utils/auth";
+import { signin, signup, authorizeUser, updateUser } from "../../utils/auth";
 // import { defaultClothingItems } from "../../utils/constants";
 
 const defaultWeatherData = {
@@ -38,6 +39,7 @@ const App = () => {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
+  const [token, setToken] = useState(null);
 
   const handleToggleSwitchChange = () => {
     setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
@@ -63,6 +65,7 @@ const App = () => {
 
   const handleLogoutClick = () => {
     localStorage.removeItem("jwt");
+    setToken(null);
     setIsAuthenticated(false);
     setCurrentUser(null);
   };
@@ -79,6 +82,7 @@ const App = () => {
       })
       .then((res) => {
         localStorage.setItem("jwt", res.token);
+        setToken(res.token);
         setIsAuthenticated(true);
         setCurrentUser(res.user);
         closeActiveModal();
@@ -90,8 +94,18 @@ const App = () => {
     signin(loginFormValues)
       .then((res) => {
         localStorage.setItem("jwt", res.token);
+        setToken(res.token);
         setIsAuthenticated(true);
         setCurrentUser(res.user);
+        closeActiveModal();
+      })
+      .catch(console.error);
+  };
+
+  const handleEditProfileModalSubmit = (editProfileValues) => {
+    updateUser(token, editProfileValues)
+      .then((user) => {
+        setCurrentUser(user);
         closeActiveModal();
       })
       .catch(console.error);
@@ -166,6 +180,7 @@ const App = () => {
       authorizeUser(token).then((user) => {
         setIsAuthenticated(true);
         setCurrentUser(user);
+        setToken(token);
       });
     }
   }, []);
@@ -206,6 +221,8 @@ const App = () => {
                       cards={clothingItems}
                       handleCardClick={handleCardClick}
                       addNew={handleAddClick}
+                      showEditModal={() => setActiveModal("edit-profile")}
+                      onLogout={handleLogoutClick}
                     ></Profile>
                   </ProtectedRoute>
                 }
@@ -252,6 +269,11 @@ const App = () => {
             onConfirm={handleConfirmDelete}
             delete
             isOpen={activeModal === "delete"}
+          />
+          <EditProfileModal
+            onClose={closeActiveModal}
+            isOpen={activeModal === "edit-profile"}
+            onSaveChanges={handleEditProfileModalSubmit}
           />
         </div>
       </CurrentTemperatureUnitContext.Provider>

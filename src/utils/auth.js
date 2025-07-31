@@ -38,4 +38,15 @@ function authorizeUser(token) {
   }).then(checkResponse);
 }
 
-export { signup, signin, authorizeUser };
+function updateUser(token, { name, avatarURL }) {
+  return fetch(`${baseUrl}/users/me`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ name, avatar: avatarURL }),
+  }).then(checkResponse);
+}
+
+export { signup, signin, authorizeUser, updateUser };
