@@ -16,7 +16,6 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import Profile from "../Profile/Profile";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-// import CurrentUserContext from "../contexts/CurrentUserContext";
 import { getItems, addItems, removeItem } from "../../utils/api";
 import { signin, signup, authorizeUser } from "../../utils/auth";
 // import { defaultClothingItems } from "../../utils/constants";
@@ -60,6 +59,12 @@ const App = () => {
 
   const handleRegisterClick = () => {
     setActiveModal("register");
+  };
+
+  const handleLogoutClick = () => {
+    localStorage.removeItem("jwt");
+    setIsAuthenticated(false);
+    setCurrentUser(null);
   };
 
   const closeActiveModal = () => {
@@ -179,6 +184,7 @@ const App = () => {
               weatherData={weatherData}
               onLoginClick={handleLoginClick}
               onRegisterClick={handleRegisterClick}
+              onLogoutClick={handleLogoutClick}
             />
 
             <Routes>

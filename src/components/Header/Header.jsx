@@ -10,6 +10,7 @@ function Header({
   weatherData,
   onLoginClick,
   onRegisterClick,
+  onLogoutClick,
 }) {
   const currentUser = useContext(CurrentUserContext);
 
@@ -55,7 +56,9 @@ function Header({
                 )}
               </div>
             </Link>
-            <button className="header__button">Log Out</button>
+            <button className="header__button" onClick={onLogoutClick}>
+              Log Out
+            </button>
           </>
         ) : (
           <>
