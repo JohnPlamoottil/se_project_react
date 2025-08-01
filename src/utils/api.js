@@ -34,4 +34,33 @@ const removeItem = (token, id) => {
     },
   }).then(checkResponse);
 };
-export { getItems, addItems, removeItem, checkResponse };
+
+// like item
+function addCardLike(token, id) {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then(checkResponse);
+}
+
+// dislike item
+function removeCardLike(token, id) {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then(checkResponse);
+}
+export {
+  getItems,
+  addItems,
+  removeItem,
+  checkResponse,
+  addCardLike,
+  removeCardLike,
+};
