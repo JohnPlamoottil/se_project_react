@@ -115,7 +115,8 @@ const App = () => {
   };
 
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
-    return addItems({ name, imageUrl, weather })
+    const token = localStorage.getItem("jwt");
+    return addItems(token, { name, imageUrl, weather })
       .then((data) => {
         setClothingItems([data, ...clothingItems]);
         closeActiveModal();
@@ -158,7 +159,7 @@ const App = () => {
         addCardLike(token, id)
           .then((updatedCard) => {
             setClothingItems((cards) =>
-              cards.map((item) => (item._id === id ? updatedCard : item))
+              cards.map((item) => (item._id === id ? updatedCard.data : item))
             );
           })
           .catch((err) => console.log(err))
@@ -168,7 +169,7 @@ const App = () => {
         removeCardLike(token, id)
           .then((updatedCard) => {
             setClothingItems((cards) =>
-              cards.map((item) => (item._id === id ? updatedCard : item))
+              cards.map((item) => (item._id === id ? updatedCard.data : item))
             );
           })
           .catch((err) => console.log(err));
