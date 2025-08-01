@@ -4,8 +4,7 @@ import ItemCard from "../ItemCard/ItemCard";
 import { useContext } from "react";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 
-function Main({ weatherData, cards, handleCardClick }) {
-  console.log(cards);
+function Main({ weatherData, cards, handleCardClick, onCardLike }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   return (
     <main>
@@ -24,6 +23,7 @@ function Main({ weatherData, cards, handleCardClick }) {
                   key={filteredCard._id}
                   card={filteredCard}
                   onCardClick={handleCardClick}
+                  onCardLike={onCardLike}
                 />
               );
               //structured arguments - passed card in as a argument, and then all argument from app.jsx to itemCard

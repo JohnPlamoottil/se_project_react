@@ -7,8 +7,6 @@
 }
 
 .card__name {
-  position: absolute;
-  top: 15px;
   margin: 0;
   font-family: "Cabinet Grotesk", Arial, sans-serif;
   font-weight: 700;
@@ -19,6 +17,14 @@
   padding: 5px;
   border: 2px solid white;
   color: rgba(0, 0, 0, 0.6);
+}
+
+.card__info {
+  position: absolute;
+  top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .card__image {
@@ -39,4 +45,10 @@
   font-weight: 700;
   line-height: 20px;
   margin-top: 0;
+}
+
+.card__icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }

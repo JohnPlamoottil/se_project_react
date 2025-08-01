@@ -17,7 +17,13 @@ import LoginModal from "../LoginModal/LoginModal";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
 import Profile from "../Profile/Profile";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-import { getItems, addItems, removeItem } from "../../utils/api";
+import {
+  getItems,
+  addItems,
+  removeItem,
+  addCardLike,
+  removeCardLike,
+} from "../../utils/api";
 import { signin, signup, authorizeUser, updateUser } from "../../utils/auth";
 // import { defaultClothingItems } from "../../utils/constants";
 
@@ -39,7 +45,6 @@ const App = () => {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
-  const [token, setToken] = useState(null);
 
   const handleToggleSwitchChange = () => {
     setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
@@ -65,7 +70,6 @@ const App = () => {
 
   const handleLogoutClick = () => {
     localStorage.removeItem("jwt");
-    setToken(null);
     setIsAuthenticated(false);
     setCurrentUser(null);
   };
@@ -82,7 +86,6 @@ const App = () => {
       })
       .then((res) => {
         localStorage.setItem("jwt", res.token);
-        setToken(res.token);
         setIsAuthenticated(true);
         setCurrentUser(res.user);
         closeActiveModal();
@@ -94,7 +97,6 @@ const App = () => {
     signin(loginFormValues)
       .then((res) => {
         localStorage.setItem("jwt", res.token);
-        setToken(res.token);
         setIsAuthenticated(true);
         setCurrentUser(res.user);
         closeActiveModal();
@@ -103,6 +105,7 @@ const App = () => {
   };
 
   const handleEditProfileModalSubmit = (editProfileValues) => {
+    const token = localStorage.getItem("jwt");
     updateUser(token, editProfileValues)
       .then((user) => {
         setCurrentUser(user);
@@ -145,6 +148,32 @@ const App = () => {
     }
   };
 
+  const handleCardLike = ({ id, isLiked }) => {
+    const token = localStorage.getItem("jwt");
+    // Check if this card is not currently liked
+    !isLiked && token
+      ? // if so, send a request to add the user's id to the card's likes array
+
+        // the first argument is the card's id
+        addCardLike(token, id)
+          .then((updatedCard) => {
+            setClothingItems((cards) =>
+              cards.map((item) => (item._id === id ? updatedCard : item))
+            );
+          })
+          .catch((err) => console.log(err))
+      : // if not, send a request to remove the user's id from the card's likes array
+
+        // the first argument is the card's id
+        removeCardLike(token, id)
+          .then((updatedCard) => {
+            setClothingItems((cards) =>
+              cards.map((item) => (item._id === id ? updatedCard : item))
+            );
+          })
+          .catch((err) => console.log(err));
+  };
+
   useEffect(() => {
     console.log("app is running");
     getWeather(coordinates, APIkey)
@@ -180,7 +209,6 @@ const App = () => {
       authorizeUser(token).then((user) => {
         setIsAuthenticated(true);
         setCurrentUser(user);
-        setToken(token);
       });
     }
   }, []);
@@ -210,6 +238,7 @@ const App = () => {
                     weatherData={weatherData}
                     handleCardClick={handleCardClick}
                     cards={clothingItems}
+                    onCardLike={handleCardLike}
                   />
                 }
               />
