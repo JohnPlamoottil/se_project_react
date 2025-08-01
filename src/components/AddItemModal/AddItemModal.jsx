@@ -42,8 +42,6 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
 
   // };
 
-  console.log(values);
-
   const isValid = values.name && values.imageUrl && values.weather;
   return (
     <ModalWithForm
