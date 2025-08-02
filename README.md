@@ -1,4 +1,4 @@
-# React + Vite Sprints 10 & 11 Frontend
+# React + Vite Sprints 10 & 11 Frontend & 14 WTWR
 # Sprint 10
 ## Project 10 - Introduction to React.js:
 
@@ -24,9 +24,7 @@ This project entailed an introduction to tools like React.js, Vite, NPM, as well
 
 ### Links:
 
-- Link to the project design on Figma: [https://www.figma.com/design/F03bTb81Pw8IDPj5Y9rc5i/Sprint-10-%7C-WTWR?node-id=311-433&p=f&t=vthtxzUYcexEmeuk-0]
-
-- Link to the project on GH Pages: [...]
+- Link to the project10 design on Figma: [https://www.figma.com/design/F03bTb81Pw8IDPj5Y9rc5i/Sprint-10-%7C-WTWR?node-id=311-433&p=f&t=vthtxzUYcexEmeuk-0]
 
 # Sprint 11
 ## Project 11 - React Routing and State Management:
@@ -51,16 +49,21 @@ This project entailed building on the work done in Project 10 by employing advan
 
 ### Links:
 
-- Link to the project design on Figma: [https://www.figma.com/design/dQLJwEKasIdspciJAJrCaf/Sprint-11_-WTWR?node-id=311-433&p=f&t=Q4P8wDynQ7gVDHvX-0]
+- Link to the project11 design on Figma: [https://www.figma.com/design/dQLJwEKasIdspciJAJrCaf/Sprint-11_-WTWR?node-id=311-433&p=f&t=Q4P8wDynQ7gVDHvX-0]
 
-- Link to the project on GH Pages: [...]
 
-How to Send GET and POST Requests with JavaScript Fetch API May15 2025
+## Github Links:
+- se_project_react: [[Frontend] [https://github.com/JohnPlamoottil/se_project_react]]
+
+- se_project_express: [[Backend](https://github.com/JohnPlamoottil/se_project_express)]
+
+### Miscellaneous:
+- How to Send GET and POST Requests with JavaScript Fetch API (May15 2025)
 <https://metabox.io/send-get-post-request-with-javascript-fetch-api/#:~:text=To%20send%20a%20JavaScript%20POST,path%2F'%2C%20options%20)%20.>
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
