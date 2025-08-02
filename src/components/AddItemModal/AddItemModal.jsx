@@ -93,6 +93,7 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
               name="weather"
               className="modal__radio-input"
               onChange={handleChange}
+              checked={values.weather === "hot"}
             />
             Hot
           </label>
@@ -110,6 +111,7 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
               name="weather"
               className="modal__radio-input"
               onChange={handleChange}
+              checked={values.weather === "warm"}
             />
             Warm
           </label>
@@ -127,6 +129,7 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
               name="weather"
               className="modal__radio-input"
               onChange={handleChange}
+              checked={values.weather === "cold"}
             />
             Cold
           </label>
