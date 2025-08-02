@@ -135,8 +135,9 @@ const App = () => {
   //   // 4. render the item you got from server   line66
 
   const handleConfirmDelete = () => {
+    const token = localStorage.getItem("jwt");
     if (selectedCard._id) {
-      removeItem(selectedCard._id)
+      removeItem(token, selectedCard._id)
         .then(() => {
           setClothingItems((prevItems) =>
             prevItems.filter((item) => item._id !== selectedCard._id)
