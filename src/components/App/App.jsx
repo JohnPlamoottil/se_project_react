@@ -255,6 +255,7 @@ const App = () => {
                       addNew={handleAddClick}
                       showEditModal={() => setActiveModal("edit-profile")}
                       onLogout={handleLogoutClick}
+                      onCardLike={handleCardLike}
                     ></Profile>
                   </ProtectedRoute>
                 }

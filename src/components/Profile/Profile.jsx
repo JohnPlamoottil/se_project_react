@@ -1,7 +1,14 @@
 import SideBar from "../SideBar/SideBar";
 import ClothesSection from "../ClothesSection/ClothesSection";
 import "./Profile.css";
-function Profile({ cards, handleCardClick, addNew, showEditModal, onLogout }) {
+function Profile({
+  cards,
+  handleCardClick,
+  addNew,
+  showEditModal,
+  onLogout,
+  onCardLike,
+}) {
   return (
     <div className="profile">
       <section className="profile__sidebar">
@@ -11,6 +18,7 @@ function Profile({ cards, handleCardClick, addNew, showEditModal, onLogout }) {
         cards={cards}
         handleCardClick={handleCardClick}
         addNew={addNew}
+        onCardLike={onCardLike}
       ></ClothesSection>
     </div>
   );

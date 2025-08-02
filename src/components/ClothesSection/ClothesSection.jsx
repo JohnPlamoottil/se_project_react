@@ -3,7 +3,7 @@ import ItemCard from "../ItemCard/ItemCard";
 import "./ClothesSection.css";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-function ClothesSection({ cards, handleCardClick, addNew }) {
+function ClothesSection({ cards, handleCardClick, addNew, onCardLike }) {
   const currentUser = useContext(CurrentUserContext);
 
   const filteredCards = cards.filter((card) => card.owner === currentUser?._id);
@@ -24,10 +24,10 @@ function ClothesSection({ cards, handleCardClick, addNew }) {
               key={filteredCard._id}
               card={filteredCard}
               onCardClick={handleCardClick}
+              onCardLike={onCardLike}
             />
           );
         })}
-        ;
       </ul>
     </div>
   );
