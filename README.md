@@ -53,7 +53,7 @@ This project entailed building on the work done in Project 10 by employing advan
 
 
 ## Github Links:
-- se_project_react: [[Frontend] [https://github.com/JohnPlamoottil/se_project_react]]
+- se_project_react: [[Frontend] (https://github.com/JohnPlamoottil/se_project_react)]
 
 - se_project_express: [[Backend](https://github.com/JohnPlamoottil/se_project_express)]
 
