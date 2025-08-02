@@ -119,7 +119,7 @@ const App = () => {
     return addItems(token, { name, imageUrl, weather })
       .then((data) => {
         console.log(data);
-        setClothingItems([data, ...clothingItems]);
+        setClothingItems((prevItems) => [...prevItems, data.data]);
         closeActiveModal();
       })
       .catch(console.error);
