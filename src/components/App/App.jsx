@@ -118,6 +118,7 @@ const App = () => {
     const token = localStorage.getItem("jwt");
     return addItems(token, { name, imageUrl, weather })
       .then((data) => {
+        console.log(data);
         setClothingItems([data, ...clothingItems]);
         closeActiveModal();
       })
