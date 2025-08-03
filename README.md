@@ -49,6 +49,45 @@ This project entailed building on the work done in Project 10 by employing advan
 - Routers
 - db.json
 
+# Sprint 14
+Back-End Authentication and Authorization
+## Project 14
+### WTWR - full stack
+se_project_react
+
+se_project_express
+
+### Overview:
+- Intro to Front-End Authentication with React
+- Intro to Web Application Security
+- Links
+
+### Intro:
+This project represents an important first in your software engineer journey: you’ll connect your frontend and backend and create a full-stack application. In this project, you'll:
+
+Implement the logic for signing up, signing in, and signing out
+Add new context to store data about the current user
+Implement the logic for editing a profile
+Implement the ability for users to add likes to clothing items
+In the process, you'll also utilize the API you created in projects 12 and 13 to send fetch requests.
+
+This implementation ensures secure user management while maintaining the RESTful architecture established in the previous sprint.
+
+This project can be run with these prompts:
+
+- `npm run start` — to launch the server
+- cd server_se_project_express
+- cd web_se_project_react
+- `npm run dev` — to launch the server with the hot reload feature
+- this launches the server as a local host
+- next sprint will deploy this website to the web
+  
+### Features:
+- Front End Authentication and Authorization 
+- Web Security
+- JS Web token on the frontend
+
+
 ### Links:
 
 Project11 Design: [Figma Project11](https://www.figma.com/design/dQLJwEKasIdspciJAJrCaf/Sprint-11_-WTWR?node-id=311-433&p=f&t=Q4P8wDynQ7gVDHvX-0)
