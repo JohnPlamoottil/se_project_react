@@ -27,8 +27,7 @@ export default function EditProfileModal({ isOpen, onClose, onSaveChanges }) {
     }
   }, [isOpen, setValues, initialValues]);
 
-  const isValid =
-    values.email && values.password && values.name && values.avatarURL;
+  const isValid = values.name && values.avatarURL;
   return (
     <ModalWithForm
       title="Change profile data"
