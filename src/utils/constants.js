@@ -115,7 +115,7 @@ export const coordinates = {
   longitude: -87.629799,
 };
 
-export const APIkey = "533a4c658ee0e0df01942677b69395f2";
+export const apiKey = "533a4c658ee0e0df01942677b69395f2";
 
 // Chicago
 // latitude: 41.878113,
