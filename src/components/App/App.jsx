@@ -144,8 +144,6 @@ const App = () => {
           );
           // setIsConfirmationModalOpen(false);
           closeActiveModal();
-          // eslint-disable-next-line no-undef
-          setItemToDelete(null);
         })
         .catch(console.error);
     }
