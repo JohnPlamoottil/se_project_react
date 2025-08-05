@@ -119,7 +119,7 @@ const App = () => {
     return addItems(token, { name, imageUrl, weather })
       .then((data) => {
         console.log(data);
-        setClothingItems((prevItems) => [...prevItems, data.data]);
+        setClothingItems((prevItems) => [data.data, ...prevItems]);
         closeActiveModal();
       })
       .catch(console.error);
@@ -176,27 +176,17 @@ const App = () => {
   };
 
   useEffect(() => {
-    console.log("app is running");
     getWeather(coordinates, apiKey)
       .then((data) => {
-        console.log(data);
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
       })
       .catch(console.error);
   }, []);
 
-  // console.log("TEST2:", defaultClothingItems);
-
-  // useEffect(() => {
-  //   setClothingItems(defaultClothingItems);
-  // console.log("TEST:", clothingItems);
-  // }, []);
-
   useEffect(() => {
     getItems()
       .then(({ data }) => {
-        console.log(data);
         //update clothingItems to be the data that we got back from the server
         setClothingItems(data.reverse());
       })
