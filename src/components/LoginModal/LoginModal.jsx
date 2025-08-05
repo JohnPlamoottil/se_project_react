@@ -38,31 +38,32 @@ export default function LoginModal({
       isValid={isValid}
       onAltButtonClick={onRegisterClick}
     >
-      <label htmlFor="email" className="modal__label">
+      <label htmlFor="login-email" className="modal__label">
         Email
         <input
           type="email"
           name="email"
           className="modal__input"
-          id="email"
+          id="login-email"
           placeholder="Email"
           required
           onChange={handleChange}
           value={values.email}
+          autoComplete="email"
         />
-        <span className="modal__error" id="place-name-error" />
       </label>
-      <label htmlFor="password" className="modal__label">
+      <label htmlFor="login-password" className="modal__label">
         Password
         <input
           type="password"
           className="modal__input"
-          id="password"
+          id="login-password"
           placeholder="Password"
           onChange={handleChange}
           value={values.password}
           required
           name="password"
+          autoComplete="current-password"
         />
       </label>
     </ModalWithForm>

@@ -54,8 +54,8 @@ export default function RegisterModal({
           maxLength="30"
           onChange={handleChange}
           value={values.email}
+          autoComplete="email"
         />
-        <span className="modal__error" id="place-name-error" />
       </label>
       <label htmlFor="password" className="modal__label">
         Password*
@@ -70,6 +70,7 @@ export default function RegisterModal({
           value={values.password}
           required
           name="password"
+          autoComplete="new-password"
         />
       </label>
       <label htmlFor="name" className="modal__label">
