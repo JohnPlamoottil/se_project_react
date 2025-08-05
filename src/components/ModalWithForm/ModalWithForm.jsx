@@ -31,7 +31,11 @@ function ModalWithForm({
               {buttonText}
             </button>
             {altButtonText && (
-              <button className="modal__alt" onClick={onAltButtonClick}>
+              <button
+                type="button"
+                className="modal__alt"
+                onClick={onAltButtonClick}
+              >
                 {altButtonText}
               </button>
             )}
