@@ -41,7 +41,7 @@ export default function RegisterModal({
       isValid={isValid}
       onAltButtonClick={onLoginClick}
     >
-      <label htmlFor="email" className="modal__label">
+      <label className="modal__label">
         Email*
         <input
           type="email"
@@ -57,7 +57,7 @@ export default function RegisterModal({
           autoComplete="email"
         />
       </label>
-      <label htmlFor="password" className="modal__label">
+      <label className="modal__label">
         Password*
         <input
           type="password"
@@ -73,7 +73,7 @@ export default function RegisterModal({
           autoComplete="new-password"
         />
       </label>
-      <label htmlFor="name" className="modal__label">
+      <label className="modal__label">
         Name*
         <input
           type="text"
@@ -86,7 +86,7 @@ export default function RegisterModal({
           name="name"
         />
       </label>
-      <label htmlFor="avatarURL" className="modal__label">
+      <label className="modal__label">
         Avatar URL*
         <input
           type="text"

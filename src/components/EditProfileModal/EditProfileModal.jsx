@@ -37,7 +37,7 @@ export default function EditProfileModal({ isOpen, onClose, onSaveChanges }) {
       onSubmit={handleSubmit}
       isValid={isValid}
     >
-      <label htmlFor="profile-name" className="modal__label">
+      <label className="modal__label">
         Name *
         <input
           type="text"
@@ -50,7 +50,7 @@ export default function EditProfileModal({ isOpen, onClose, onSaveChanges }) {
           name="name"
         />
       </label>
-      <label htmlFor="profile-avatarURL" className="modal__label">
+      <label className="modal__label">
         Avatar *
         <input
           type="text"

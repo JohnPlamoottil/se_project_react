@@ -38,7 +38,7 @@ export default function LoginModal({
       isValid={isValid}
       onAltButtonClick={onRegisterClick}
     >
-      <label htmlFor="login-email" className="modal__label">
+      <label className="modal__label">
         Email
         <input
           type="email"
@@ -52,7 +52,7 @@ export default function LoginModal({
           autoComplete="email"
         />
       </label>
-      <label htmlFor="login-password" className="modal__label">
+      <label className="modal__label">
         Password
         <input
           type="password"

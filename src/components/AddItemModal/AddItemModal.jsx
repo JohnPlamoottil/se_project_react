@@ -52,7 +52,7 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
       onSubmit={handleSubmit}
       isValid={isValid}
     >
-      <label htmlFor="clothing-name" className="modal__label">
+      <label className="modal__label">
         Name{" "}
         <input
           type="text"
@@ -66,9 +66,8 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
           onChange={handleChange}
           value={values.name}
         />
-        <span className="modal__error" id="place-name-error" />
       </label>
-      <label htmlFor="imageUrl" className="modal__label">
+      <label className="modal__label">
         Image
         <input
           type="text"
@@ -80,12 +79,11 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
           required
           name="imageUrl"
         />
-        <span className="modal__error" id="place-link-error" />
       </label>
       <fieldset className="modal__radio-buttons">
         <legend className="modal__legend">Select the weather type;</legend>
         <div>
-          <label htmlFor="hot" className="modal__input modal__label_type_radio">
+          <label className="modal__input modal__label_type_radio">
             <input
               id="hot"
               type="radio"
@@ -100,10 +98,7 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
         </div>
 
         <div>
-          <label
-            htmlFor="warm"
-            className="modal__input modal__label_type_radio"
-          >
+          <label className="modal__input modal__label_type_radio">
             <input
               id="warm"
               type="radio"
@@ -118,10 +113,7 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
         </div>
 
         <div>
-          <label
-            htmlFor="cold"
-            className="modal__input modal__label_type_radio"
-          >
+          <label className="modal__input modal__label_type_radio">
             <input
               id="cold"
               type="radio"
