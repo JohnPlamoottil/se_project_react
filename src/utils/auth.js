@@ -1,5 +1,9 @@
 import { checkResponse } from "./api";
-const baseUrl = "http://localhost:3001";
+const baseUrl =
+  // eslint-disable-next-line no-undef
+  process.env.NODE_ENV === "production"
+    ? "https://api.wtwr-jjsprint15.chickenkiller.com"
+    : "http://localhost:3001";
 
 function signup({ name, email, password, avatarURL }) {
   return fetch(`${baseUrl}/signup`, {
