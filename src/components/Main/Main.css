@@ -21,3 +21,6 @@
 .main__items {
   gap: 20px;
 }
+.main {
+  flex-grow: 1;
+}
