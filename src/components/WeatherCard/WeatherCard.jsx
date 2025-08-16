@@ -13,6 +13,7 @@ const WeatherCard = ({ weatherData }) => {
       option.condition === weatherData.condition
     );
   });
+
   // console.log(filteredOptions[0]?.url, weatherData);
   // since weatherOption is a array with ONE element not an option, need the 0th element
   const weatherOptionUrl = filteredOptions[0]?.url;
