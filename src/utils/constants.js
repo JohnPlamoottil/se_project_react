@@ -111,8 +111,8 @@ export const defaultClothingItems = [
 ];
 
 export const coordinates = {
-  latitude: 41.878113,
-  longitude: -87.629799,
+  latitude: 42.3737,
+  longitude: -87.9344,
 };
 
 export const apiKey = "533a4c658ee0e0df01942677b69395f2";
@@ -120,6 +120,14 @@ export const apiKey = "533a4c658ee0e0df01942677b69395f2";
 // Chicago
 // latitude: 41.878113,
 // longitude: -87.629799,
+
+// Gurnee. ,
+// latitude: 42.3737°N,
+// longitude: –87.9344°W,
+
+// Mount Prospect
+// latitude: 42.065427°N,
+// longitude: –87.936217°W,
 
 //Mexico City
 // latitude 19.432608,
